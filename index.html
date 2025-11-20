@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Frankoman 6-Day PPL Progressive Tracker - Track your dumbbell workouts with automatic progression">
+    <title>Frankoman PPL Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <header>
+                <h1>💪 Frankoman PPL</h1>
+                <p class="subtitle">6-Day Dumbbell Program</p>
+            </header>
+
+            <div class="day-buttons">
+                <button class="day-btn" data-day="PushA">
+                    <div class="day-name">Push A</div>
+                    <div class="day-subtitle">Chest & Shoulders</div>
+                    <div class="last-done" id="lastDone-PushA">Never completed</div>
+                </button>
+
+                <button class="day-btn" data-day="PullA">
+                    <div class="day-name">Pull A</div>
+                    <div class="day-subtitle">Back Thickness</div>
+                    <div class="last-done" id="lastDone-PullA">Never completed</div>
+                </button>
+
+                <button class="day-btn" data-day="LegsA">
+                    <div class="day-name">Legs A</div>
+                    <div class="day-subtitle">Quad Focus</div>
+                    <div class="last-done" id="lastDone-LegsA">Never completed</div>
+                </button>
+
+                <button class="day-btn" data-day="PushB">
+                    <div class="day-name">Push B</div>
+                    <div class="day-subtitle">Triceps & Chest</div>
+                    <div class="last-done" id="lastDone-PushB">Never completed</div>
+                </button>
+
+                <button class="day-btn" data-day="PullB">
+                    <div class="day-name">Pull B</div>
+                    <div class="day-subtitle">Back Width & Biceps</div>
+                    <div class="last-done" id="lastDone-PullB">Never completed</div>
+                </button>
+
+                <button class="day-btn" data-day="LegsB">
+                    <div class="day-name">Legs B</div>
+                    <div class="day-subtitle">Posterior Chain</div>
+                    <div class="last-done" id="lastDone-LegsB">Never completed</div>
+                </button>
+            </div>
+
+            <div class="bottom-nav">
+                <button id="historyBtn" class="nav-btn">📊 History</button>
+                <button id="settingsBtn" class="nav-btn">⚙️ Settings</button>
+            </div>
+        </div>
+
+        <!-- Workout Screen -->
+        <div id="workoutScreen" class="screen">
+            <header class="workout-header">
+                <button id="backBtn" class="icon-btn">← Back</button>
+                <div>
+                    <h2 id="workoutTitle">Push A</h2>
+                    <p id="exerciseCounter" class="exercise-counter">Exercise 1 of 5</p>
+                </div>
+            </header>
+
+            <div class="exercise-container">
+                <div class="exercise-header">
+                    <h3 id="exerciseName">Exercise Name</h3>
+                    <a id="demoLink" href="#" target="_blank" class="demo-btn">🎥 Demo Video</a>
+                </div>
+
+                <div id="setsContainer" class="sets-container">
+                    <!-- Sets will be inserted here -->
+                </div>
+
+                <div class="rest-timer" id="restTimer" style="display: none;">
+                    <div class="timer-text">Rest Timer: <span id="timerDisplay">90</span>s</div>
+                    <button id="skipTimer" class="skip-btn">Skip</button>
+                </div>
+            </div>
+
+            <div class="workout-nav">
+                <button id="prevExercise" class="nav-exercise-btn">← Previous</button>
+                <button id="nextExercise" class="nav-exercise-btn">Next →</button>
+                <button id="finishWorkout" class="finish-btn" style="display: none;">✓ Finish Workout</button>
+            </div>
+        </div>
+
+        <!-- History Screen -->
+        <div id="historyScreen" class="screen">
+            <header>
+                <button id="historyBackBtn" class="icon-btn">← Back</button>
+                <h2>Workout History</h2>
+            </header>
+
+            <div class="history-actions">
+                <button id="exportBtn" class="action-btn">📥 Export Data</button>
+                <button id="importBtn" class="action-btn">📤 Import Data</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+
+            <div id="historyList" class="history-list">
+                <p class="empty-message">No workouts completed yet. Start training!</p>
+            </div>
+        </div>
+
+        <!-- Settings Screen -->
+        <div id="settingsScreen" class="screen">
+            <header>
+                <button id="settingsBackBtn" class="icon-btn">← Back</button>
+                <h2>Settings</h2>
+            </header>
+
+            <div class="settings-container">
+                <div class="setting-item">
+                    <label for="unitToggle">Weight Unit</label>
+                    <select id="unitToggle" class="setting-select">
+                        <option value="kg">Kilograms (kg)</option>
+                        <option value="lb">Pounds (lb)</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="autoTimer">Auto Rest Timer</label>
+                    <select id="autoTimer" class="setting-select">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label>Data Management</label>
+                    <button id="clearDataBtn" class="danger-btn">Clear All Data</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Modal -->
+        <div id="summaryModal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 Great Job!</h2>
+                <div id="summaryContent"></div>
+                <button id="closeSummary" class="primary-btn">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

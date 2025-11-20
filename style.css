@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff6b35;
+    --primary-dark: #e55a2b;
+    --bg-dark: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-input: #0f1626;
+    --text-primary: #ffffff;
+    --text-secondary: #b4b4b4;
+    --success: #4ecca3;
+    --danger: #ee4540;
+    --border: #2d3561;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Screen Management */
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Headers */
+header {
+    background: var(--bg-card);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header h2 {
+    font-size: 24px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.workout-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--bg-card);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.exercise-counter {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.icon-btn {
+    background: transparent;
+    color: var(--primary);
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.icon-btn:active {
+    background: rgba(255, 107, 53, 0.1);
+}
+
+/* Day Buttons */
+.day-buttons {
+    padding: 20px;
+    display: grid;
+    gap: 15px;
+}
+
+.day-btn {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.day-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.day-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.day-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.last-done {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-btn {
+    flex: 1;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    min-height: 48px;
+}
+
+.nav-btn:active {
+    background: var(--border);
+}
+
+/* Exercise Container */
+.exercise-container {
+    padding: 20px;
+}
+
+.exercise-header {
+    margin-bottom: 20px;
+}
+
+.exercise-header h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.demo-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    min-height: 48px;
+    line-height: 24px;
+}
+
+.demo-btn:active {
+    background: var(--primary-dark);
+}
+
+/* Sets Container */
+.sets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.set-row {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.set-row.completed {
+    border-color: var(--success);
+    opacity: 0.7;
+}
+
+.set-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.set-number {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.target-reps {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.set-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.input-group input {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    min-height: 48px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.check-btn {
+    background: var(--success);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-btn:active {
+    opacity: 0.8;
+}
+
+.check-btn.completed {
+    background: var(--border);
+}
+
+.previous-performance {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Rest Timer */
+.rest-timer {
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timer-text {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#timerDisplay {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.skip-btn {
+    background: var(--bg-input);
+    color: var(--text-primary);
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    min-height: 48px;
+}
+
+.skip-btn:active {
+    background: var(--border);
+}
+
+/* Workout Navigation */
+.workout-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-exercise-btn {
+    flex: 1;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    min-height: 48px;
+}
+
+.nav-exercise-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-exercise-btn:active:not(:disabled) {
+    background: var(--border);
+}
+
+.finish-btn {
+    width: 100%;
+    background: var(--success);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 48px;
+}
+
+.finish-btn:active {
+    opacity: 0.9;
+}
+
+/* History Screen */
+.history-actions {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    min-height: 48px;
+}
+
+.action-btn:active {
+    background: var(--primary-dark);
+}
+
+.history-list {
+    padding: 0 20px 20px;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+.history-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.history-day {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.history-date {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.history-summary {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Settings Screen */
+.settings-container {
+    padding: 20px;
+}
+
+.setting-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.setting-select {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    min-height: 48px;
+}
+
+.danger-btn {
+    background: var(--danger);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.danger-btn:active {
+    opacity: 0.9;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+#summaryContent {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 48px;
+}
+
+.primary-btn:active {
+    background: var(--primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .day-name {
+        font-size: 20px;
+    }
+
+    .exercise-header h3 {
+        font-size: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+/* Prevent pull-to-refresh on mobile */
+body {
+    overscroll-behavior-y: contain;
+}
+
+/* Smooth transitions */
+.screen {
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

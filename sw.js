@@ -1,14 +1,14 @@
 // Service Worker for Frankoman PPL Tracker
-const CACHE_NAME = 'frankoman-ppl-v1';
+const CACHE_NAME = 'frankoman-ppl-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png',
-  '/apple-touch-icon.png'
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png',
+  './apple-touch-icon.png'
 ];
 
 // Install event - cache all assets

@@ -123,14 +123,14 @@ function getSuggestedWeight(dayKey, exerciseName, setIndex) {
   const lastWorkout = findLastWorkout(data.history, dayKey, exerciseName);
 
   if (!lastWorkout) {
-    return state.settings.unit === 'kg' ? 10 : 20; // Default starting weight
+    return state.settings.unit === 'kg' ? 2.5 : 5; // Default starting weight
   }
 
   const sets = lastWorkout.sets;
   const lastSet = sets[setIndex];
 
   if (!lastSet) {
-    return sets[0]?.weight || (state.settings.unit === 'kg' ? 10 : 20);
+    return sets[0]?.weight || (state.settings.unit === 'kg' ? 2.5 : 5);
   }
 
   // Parse target reps
@@ -143,7 +143,7 @@ function getSuggestedWeight(dayKey, exerciseName, setIndex) {
   const allSetsMaxed = sets.every(s => s.reps >= maxReps);
   const anySetBelowMin = sets.some(s => s.reps < minReps);
 
-  const increment = state.settings.unit === 'kg' ? 2.5 : 5;
+  const increment = state.settings.unit === 'kg' ? 1.25 : 2.5;
 
   if (allSetsMaxed) {
     return lastSet.weight + increment;
@@ -281,16 +281,16 @@ function renderExercise() {
         <span class="target-reps">Target: ${setData.targetReps} reps</span>
       </div>
       <div class="set-inputs">
-        <div class="input-group">
+        <div class="input-group weight-group">
           <label>Weight (${state.settings.unit})</label>
           <input type="number"
                  class="weight-input"
                  data-set="${index}"
                  value="${setData.weight}"
-                 step="${state.settings.unit === 'kg' ? '2.5' : '5'}"
+                 step="${state.settings.unit === 'kg' ? '1.25' : '2.5'}"
                  ${setData.completed ? 'disabled' : ''}>
         </div>
-        <div class="input-group">
+        <div class="input-group reps-group">
           <label>Reps</label>
           <input type="number"
                  class="reps-input"

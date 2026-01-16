@@ -6,61 +6,63 @@ const ROUTINE = {
   PushA: {
     name: "Push A (Chest & Shoulders)",
     exercises: [
-      { name: "Incline Dumbbell Bench Press", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html" },
-      { name: "Dumbbell Bench Press", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html" },
-      { name: "Dumbbell Flys", sets: 1, reps: "12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/dumbbell-flys.html" },
-      { name: "Standing Dumbbell Press", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html" },
-      { name: "Dumbbell Lateral Raise", sets: 2, reps: "10-12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html" }
+      { name: "Incline Dumbbell Bench Press", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html" },
+      { name: "Dumbbell Bench Press", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html" },
+      { name: "Dumbbell Flys", sets: 1, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/dumbbell-flys.html" },
+      { name: "Standing Dumbbell Press", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html" },
+      { name: "Dumbbell Lateral Raise", sets: 2, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html" },
+      { name: "Seated Dumbbell Tricep Extension", sets: 2, reps: "10-12", rest: "120s", link: "https://www.muscleandstrength.com/exercises/two-arm-dumbbell-extension.html" }
     ]
   },
   PullA: {
     name: "Pull A (Back Thickness)",
     exercises: [
-      { name: "One Arm Dumbbell Row", sets: 3, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html" },
-      { name: "Bent Over Dumbbell Row", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html" },
-      { name: "Dumbbell Pullover", sets: 1, reps: "10-12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html" },
-      { name: "Incline Dumbbell Curl", sets: 2, reps: "10", rest: "60s", link: "https://www.muscleandstrength.com/exercises/incline-dumbbell-curl.html" },
-      { name: "Standing Dumbbell Curl", sets: 1, reps: "10", rest: "60s", link: "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html" }
+      { name: "One Arm Dumbbell Row", sets: 3, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html" },
+      { name: "Bent Over Dumbbell Row", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html" },
+      { name: "Dumbbell Pullover", sets: 1, reps: "8-10", rest: "120s", link: "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html" },
+      { name: "Incline Dumbbell Curl", sets: 3, reps: "10-12", rest: "120s", link: "https://www.muscleandstrength.com/exercises/incline-dumbbell-curl.html" },
+      { name: "Standing Dumbbell Curl", sets: 1, reps: "10-12", rest: "120s", link: "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html" }
     ]
   },
   LegsA: {
     name: "Legs A (Quad Focus)",
     exercises: [
-      { name: "Dumbbell Lunge", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lunge.html" },
-      { name: "Dumbbell Squat", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-squat.html" },
-      { name: "Dumbbell Stiff Leg Deadlift", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-stiff-leg-deadlift.html" },
-      { name: "Seated Dumbbell Calf Raise", sets: 1, reps: "12-15", rest: "60s", link: "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html" },
-      { name: "Dumbbell Standing Calf Raise", sets: 2, reps: "10-12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/standing-one-leg-calf-raise-with-dumbbell.html" }
+      { name: "Dumbbell Lunge", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lunge.html" },
+      { name: "Dumbbell Squat", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-squat.html" },
+      { name: "Dumbbell Stiff Leg Deadlift", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-stiff-leg-deadlift.html" },
+      { name: "Seated Dumbbell Calf Raise", sets: 1, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html" },
+      { name: "Dumbbell Standing Calf Raise", sets: 2, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/standing-one-leg-calf-raise-with-dumbbell.html" }
     ]
   },
   PushB: {
     name: "Push B (Triceps & Chest)",
     exercises: [
-      { name: "Dumbbell Bench Press", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html" },
-      { name: "Incline Dumbbell Bench Press", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html" },
-      { name: "Dumbbell Skullcrusher", sets: 2, reps: "12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/ez-bar-skullcrusher.html" },
-      { name: "Dumbbell Tricep Kickback", sets: 1, reps: "12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/tricep-kickback.html" },
-      { name: "Bent Over Dumbbell Reverse Fly", sets: 2, reps: "10-12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-reverse-fly.html" }
+      { name: "Dumbbell Bench Press", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html" },
+      { name: "Incline Dumbbell Bench Press", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html" },
+      { name: "Dumbbell Skullcrusher", sets: 2, reps: "10-12", rest: "120s", link: "https://www.muscleandstrength.com/exercises/ez-bar-skullcrusher.html" },
+      { name: "Dumbbell Tricep Kickback", sets: 1, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/tricep-kickback.html" },
+      { name: "Bent Over Dumbbell Reverse Fly", sets: 2, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-reverse-fly.html" },
+      { name: "Dumbbell Lateral Raise", sets: 2, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html" }
     ]
   },
   PullB: {
     name: "Pull B (Back Width & Biceps)",
     exercises: [
-      { name: "Bent Over Dumbbell Row", sets: 3, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html" },
-      { name: "One Arm Dumbbell Row", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html" },
-      { name: "Dumbbell Pullover", sets: 1, reps: "10-12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html" },
-      { name: "Standing Dumbbell Curl", sets: 2, reps: "10", rest: "60s", link: "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html" },
-      { name: "Cross Body Hammer Curl", sets: 1, reps: "10", rest: "60s", link: "https://www.muscleandstrength.com/exercises/hammer-curl-across-the-body.html" }
+      { name: "Bent Over Dumbbell Row", sets: 3, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html" },
+      { name: "One Arm Dumbbell Row", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html" },
+      { name: "Dumbbell Pullover", sets: 1, reps: "8-10", rest: "120s", link: "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html" },
+      { name: "Standing Dumbbell Curl", sets: 3, reps: "10-12", rest: "120s", link: "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html" },
+      { name: "Cross Body Hammer Curl", sets: 1, reps: "10-12", rest: "120s", link: "https://www.muscleandstrength.com/exercises/hammer-curl-across-the-body.html" }
     ]
   },
   LegsB: {
     name: "Legs B (Posterior Chain)",
     exercises: [
-      { name: "Dumbbell Stiff Leg Deadlift", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-stiff-leg-deadlift.html" },
-      { name: "Dumbbell Step Up", sets: 2, reps: "12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-step-up.html" },
-      { name: "Dumbbell Squat", sets: 2, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-squat.html" },
-      { name: "Dumbbell Lunge", sets: 1, reps: "10-12", rest: "90s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lunge.html" },
-      { name: "Dumbbell Shrug", sets: 2, reps: "10-12", rest: "60s", link: "https://www.muscleandstrength.com/exercises/dumbbell-shrugs.html" }
+      { name: "Dumbbell Stiff Leg Deadlift", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-stiff-leg-deadlift.html" },
+      { name: "Dumbbell Step Up", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-step-up.html" },
+      { name: "Dumbbell Squat", sets: 2, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-squat.html" },
+      { name: "Dumbbell Lunge", sets: 1, reps: "8-10", rest: "180s", link: "https://www.muscleandstrength.com/exercises/dumbbell-lunge.html" },
+      { name: "Dumbbell Shrug", sets: 2, reps: "12-15", rest: "120s", link: "https://www.muscleandstrength.com/exercises/dumbbell-shrugs.html" }
     ]
   }
 };
@@ -155,13 +157,13 @@ function getSuggestedWeight(dayKey, exerciseName, setIndex) {
 }
 
 function findLastWorkout(history, dayKey, exerciseName) {
+  // Search by exercise name only, ignoring dayKey
+  // This unifies progression across A/B days for the same exercise
   for (let i = history.length - 1; i >= 0; i--) {
     const workout = history[i];
-    if (workout.dayKey === dayKey) {
-      const exercise = workout.exercises.find(e => e.name === exerciseName);
-      if (exercise) {
-        return exercise;
-      }
+    const exercise = workout.exercises.find(e => e.name === exerciseName);
+    if (exercise) {
+      return exercise;
     }
   }
   return null;

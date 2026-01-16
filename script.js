@@ -79,7 +79,8 @@ let state = {
   currentWorkout: null,
   settings: {
     unit: 'kg',
-    autoTimer: true
+    autoTimer: true,
+    increment: 2.5  // Default increment in lbs (2.5, 5, or 10)
   }
 };
 
@@ -139,7 +140,8 @@ function getSuggestedWeight(dayKey, exerciseName, setIndex) {
   const allSetsMaxed = sets.every(s => s.reps >= maxReps);
   const anySetBelowMin = sets.some(s => s.reps < minReps);
 
-  const increment = state.settings.unit === 'kg' ? 1.25 : 2.5;
+  // Use customizable increment from settings
+  const increment = state.settings.increment;
 
   if (allSetsMaxed) {
     return lastSet.weight + increment;
@@ -281,7 +283,7 @@ function renderExercise() {
                  class="weight-input"
                  data-set="${index}"
                  value="${setData.weight}"
-                 step="${state.settings.unit === 'kg' ? '1.25' : '2.5'}"
+                 step="${state.settings.increment}"
                  ${setData.completed ? 'disabled' : ''}>
         </div>
         <div class="input-group reps-group">
@@ -572,6 +574,7 @@ function handleImportFile(event) {
 
 function showSettings() {
   document.getElementById('unitToggle').value = state.settings.unit;
+  document.getElementById('incrementSelect').value = state.settings.increment.toString();
   document.getElementById('autoTimer').value = state.settings.autoTimer.toString();
   showScreen('settingsScreen');
 }
@@ -640,6 +643,11 @@ document.addEventListener('DOMContentLoaded', () => {
     state.settings.unit = e.target.value;
     saveSettings();
     initHomeScreen();
+  });
+
+  document.getElementById('incrementSelect').addEventListener('change', (e) => {
+    state.settings.increment = parseFloat(e.target.value);
+    saveSettings();
   });
 
   document.getElementById('autoTimer').addEventListener('change', (e) => {

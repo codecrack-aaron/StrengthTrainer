@@ -92,13 +92,7 @@ let timerSeconds = 0;
 
 function loadData() {
   const stored = localStorage.getItem('frankomanData');
-  if (stored) {
-    return JSON.parse(stored);
-  }
-  return {
-    lastCompletedDay: null,
-    history: []
-  };
+  return stored ? JSON.parse(stored) : { lastCompletedDay: null, history: [] };
 }
 
 function saveData(data) {
@@ -122,7 +116,7 @@ function saveSettings() {
 
 function getSuggestedWeight(dayKey, exerciseName, setIndex) {
   const data = loadData();
-  const lastWorkout = findLastWorkout(data.history, dayKey, exerciseName);
+  const lastWorkout = findLastWorkout(data.history, exerciseName);
 
   if (!lastWorkout) {
     return state.settings.unit === 'kg' ? 2.5 : 5; // Default starting weight
@@ -156,9 +150,7 @@ function getSuggestedWeight(dayKey, exerciseName, setIndex) {
   return lastSet.weight;
 }
 
-function findLastWorkout(history, dayKey, exerciseName) {
-  // Search by exercise name only, ignoring dayKey
-  // This unifies progression across A/B days for the same exercise
+function findLastWorkout(history, exerciseName) {
   for (let i = history.length - 1; i >= 0; i--) {
     const workout = history[i];
     const exercise = workout.exercises.find(e => e.name === exerciseName);
@@ -169,9 +161,9 @@ function findLastWorkout(history, dayKey, exerciseName) {
   return null;
 }
 
-function getLastPerformance(dayKey, exerciseName, setIndex) {
+function getLastPerformance(exerciseName, setIndex) {
   const data = loadData();
-  const lastWorkout = findLastWorkout(data.history, dayKey, exerciseName);
+  const lastWorkout = findLastWorkout(data.history, exerciseName);
 
   if (!lastWorkout || !lastWorkout.sets[setIndex]) {
     return null;
@@ -275,7 +267,7 @@ function renderExercise() {
     const setRow = document.createElement('div');
     setRow.className = `set-row ${setData.completed ? 'completed' : ''}`;
 
-    const lastPerf = getLastPerformance(state.currentDay, exerciseData.name, index);
+    const lastPerf = getLastPerformance(exerciseData.name, index);
 
     setRow.innerHTML = `
       <div class="set-header">
@@ -567,7 +559,7 @@ function handleImportFile(event) {
       saveData(merged);
       alert('Data imported successfully!');
       showHistory();
-    } catch (error) {
+    } catch {
       alert('Error importing data: Invalid file format');
     }
   };
